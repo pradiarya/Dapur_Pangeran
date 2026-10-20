@@ -286,7 +286,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .menu-tools { margin-top: 23px; }
   .search-field { min-height: 44px; }
   .result-count { white-space: nowrap; }
-  .category-nav { top: 66px; gap: 6px; margin-inline: -17px; padding: 10px 17px; }
+  .category-nav { top: 66px; width: auto; max-width: none; overflow-y: hidden; gap: 6px; margin-inline: -17px; padding: 10px 17px; }
   .category-chip { min-height: 37px; padding-inline: 12px; font-size: 10px; }
   .menu-category { margin-top: 31px; scroll-margin-top: 118px; }
   .category-heading { align-items: start; flex-direction: column; gap: 7px; margin-bottom: 13px; }
