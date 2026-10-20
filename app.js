@@ -94,13 +94,11 @@ function orderBadge(category, item) {
 function itemCard(category, item, index) {
   if (category.id === "snack") {
     return `<article class="menu-card snack-choice-card" data-name="${escapeHtml(`${item.name} ${item.description}`.toLowerCase())}">
-      <div class="menu-image"><img src="assets/img/${escapeHtml(category.image)}" alt="Ilustrasi jajanan ${escapeHtml(item.name)}" loading="lazy"><span class="image-index">${String(index + 1).padStart(2, "0")}</span></div>
       <div class="menu-card-body"><div class="menu-card-top"><span class="menu-badge">${item.description.includes("H-2") ? "Pesan H-2" : item.description.includes("manis") ? "Snack manis" : "Snack asin"}</span>${item.leadTime ? "<span class=\"menu-badge badge-lead\">Pesan H-2</span>" : ""}</div><h3>${escapeHtml(item.name)}</h3><p class="menu-description">${escapeHtml(item.description.replace(/ Pesan min\. H-2\./, ""))}</p><div class="card-bottom"><strong class="menu-price">${formatPrice(item.price)} <small>/ snack per box</small></strong><label class="snack-check"><input type="checkbox" class="snack-pick" value="${escapeHtml(item.name)}" aria-label="Pilih ${escapeHtml(item.name)} per box"><span>Pilih per box</span></label></div></div>
     </article>`;
   }
   const image = item.image || category.image;
   return `<article class="menu-card" data-name="${escapeHtml(`${item.name} ${item.description || ""}`.toLowerCase())}">
-    <div class="menu-image"><img src="assets/img/${escapeHtml(image)}" alt="Ilustrasi ${escapeHtml(item.name)}" loading="lazy"><span class="image-index">${String(index + 1).padStart(2, "0")}</span></div>
     <div class="menu-card-body"><div class="menu-card-top">${orderBadge(category, item)}</div><h3>${escapeHtml(item.name)}</h3><p class="menu-description">${escapeHtml(item.description || "Hidangan pilihan Dapur Pangeran.")}</p>
       ${optionControls(category, item)}
       <div class="card-bottom"><strong class="menu-price">${formatPrice(item.price)} <small>/ ${escapeHtml(item.portions ? "paket" : category.unit)}</small></strong><div class="card-actions"><div class="stepper" role="group" aria-label="Jumlah ${escapeHtml(item.name)}"><button type="button" data-quantity="down" aria-label="Kurangi jumlah">−</button><output>1</output><button type="button" data-quantity="up" aria-label="Tambah jumlah">+</button></div><button type="button" class="add-button" data-add>Tambah</button></div></div>
@@ -110,20 +108,24 @@ function itemCard(category, item, index) {
 
 function snackComposer(category) {
   if (category.id !== "snack") return "";
-  return `<div class="snack-composer"><div><span class="composer-kicker">Racik per box</span><h3>Isi snack box Anda</h3><p>Pilih maksimal 4 snack di atas dan maksimal 1 minuman. Pesanan minimal 30 box.</p></div><div class="composer-controls"><label class="option-select">Minuman<select id="snack-drink">${window.SNACK_DRINKS.map(name => `<option>${escapeHtml(name)}</option>`).join("")}</select></label><label class="option-select">Jumlah box<input id="snack-box-qty" type="number" min="30" step="1" value="30" inputmode="numeric"></label><button type="button" class="button button-primary" id="add-snack-box">Tambah Snack Box</button><p class="snack-packaging-note" id="snack-packaging-note">Biaya kemasan Snack Box Rp 1.000 per box, gratis jika pesan lebih dari 50 box.</p></div></div>`;
+  return `<div class="snack-composer"><div><h3>Racik snack box Anda</h3><p>Pilih maksimal 4 snack di atas dan maksimal 1 minuman. Pesanan minimal 30 box.</p></div><div class="composer-controls"><label class="option-select">Minuman<select id="snack-drink">${window.SNACK_DRINKS.map(name => `<option>${escapeHtml(name)}</option>`).join("")}</select></label><label class="option-select">Jumlah box<input id="snack-box-qty" type="number" min="30" step="1" value="30" inputmode="numeric"></label><button type="button" class="button button-primary" id="add-snack-box">Tambah Snack Box</button><p class="snack-packaging-note" id="snack-packaging-note">Biaya kemasan Snack Box Rp 1.000 per box, gratis jika pesan lebih dari 50 box.</p></div></div>`;
 }
 
 function renderMenu() {
   const searchTerm = elements.search.value.trim().toLocaleLowerCase("id-ID");
   const categories = window.MENU_CATEGORIES.filter(category => activeCategory === "semua" || category.id === activeCategory);
   let shownItems = 0;
+  const usedArt = new Set();
   const groups = categories.map(category => {
     const items = category.items.filter(item => !searchTerm || `${item.name} ${item.description || ""} ${category.name}`.toLocaleLowerCase("id-ID").includes(searchTerm));
     if (!items.length) return "";
     shownItems += items.length;
-    return `<section class="menu-category" id="kategori-${escapeHtml(category.id)}" aria-labelledby="heading-${escapeHtml(category.id)}"><div class="category-heading"><div><span class="category-rule"></span><h2 id="heading-${escapeHtml(category.id)}">${escapeHtml(category.name)}</h2></div><p>${escapeHtml(category.description)}</p></div>${snackComposer(category)}<div class="menu-grid">${items.map((item, index) => itemCard(category, item, index)).join("")}</div></section>`;
+    const showArt = category.image && category.image !== "hidangan.svg" && !usedArt.has(category.image);
+    if (showArt) usedArt.add(category.image);
+    const art = showArt ? `<img class="category-art" src="assets/img/${escapeHtml(category.image)}" alt="Ilustrasi ${escapeHtml(category.name)}" loading="lazy">` : "";
+    return `<section class="menu-category${showArt ? " has-art" : ""}" id="kategori-${escapeHtml(category.id)}" aria-labelledby="heading-${escapeHtml(category.id)}"><div class="category-heading"><div class="category-title"><h2 id="heading-${escapeHtml(category.id)}">${escapeHtml(category.name)}</h2><p>${escapeHtml(category.description)}</p></div>${art}</div>${snackComposer(category)}<div class="menu-grid">${items.map((item, index) => itemCard(category, item, index)).join("")}</div></section>`;
   }).join("");
-  elements.groups.innerHTML = groups || `<div class="empty-state"><span aria-hidden="true">⌕</span><h2>Menu belum ditemukan</h2><p>Coba kata kunci atau kategori lain.</p></div>`;
+  elements.groups.innerHTML = groups || `<div class="empty-state"><h2>Menu belum ditemukan</h2><p>Coba kata kunci atau kategori lain.</p></div>`;
   elements.resultCount.textContent = `${shownItems} menu`;
   renderCategoryNav();
 }
@@ -207,7 +209,7 @@ function renderCart() {
   elements.total.textContent = formatPrice(total);
   elements.cartLines.innerHTML = cart.length ? cart.map(line => `
     <article class="cart-line"><div class="cart-line-info"><div class="cart-line-title"><h3>${escapeHtml(line.itemName)}</h3><button type="button" data-cart-action="remove" data-key="${escapeHtml(line.key)}" aria-label="Hapus ${escapeHtml(line.itemName)}">Hapus</button></div>
-      ${line.optionText ? `<p class="cart-option">${escapeHtml(line.optionText)}</p>` : ""}<p class="cart-unit-price">${formatPrice(line.unitPrice)} / ${escapeHtml(line.unit)}</p><div class="cart-line-bottom"><div class="stepper cart-stepper"><button type="button" data-cart-action="down" data-key="${escapeHtml(line.key)}" aria-label="Kurangi ${escapeHtml(line.itemName)}">−</button><output>${line.qty}</output><button type="button" data-cart-action="up" data-key="${escapeHtml(line.key)}" aria-label="Tambah ${escapeHtml(line.itemName)}">+</button></div><strong>${formatPrice(line.qty * line.unitPrice)}</strong></div></div></article>`).join("") : `<div class="cart-empty"><span aria-hidden="true">✳</span><h3>Keranjang masih kosong</h3><p>Pilih menu favorit untuk memulai pesanan.</p><button type="button" class="text-button" data-close-cart>Lihat menu <span aria-hidden="true">↗</span></button></div>`;
+      ${line.optionText ? `<p class="cart-option">${escapeHtml(line.optionText)}</p>` : ""}<p class="cart-unit-price">${formatPrice(line.unitPrice)} / ${escapeHtml(line.unit)}</p><div class="cart-line-bottom"><div class="stepper cart-stepper"><button type="button" data-cart-action="down" data-key="${escapeHtml(line.key)}" aria-label="Kurangi ${escapeHtml(line.itemName)}">−</button><output>${line.qty}</output><button type="button" data-cart-action="up" data-key="${escapeHtml(line.key)}" aria-label="Tambah ${escapeHtml(line.itemName)}">+</button></div><strong>${formatPrice(line.qty * line.unitPrice)}</strong></div></div></article>`).join("") : `<div class="cart-empty"><h3>Keranjang masih kosong</h3><p>Pilih menu favorit untuk memulai pesanan.</p><button type="button" class="text-button" data-close-cart>Lihat menu <span aria-hidden="true">↗</span></button></div>`;
   const issues = minimumIssues();
   const hint = getShippingHint();
   elements.minimumWarning.innerHTML = `${issues.length ? `<span class="minimum-issues">${issues.map(escapeHtml).join("<br>")}</span>` : ""}<span class="shipping-hint">${escapeHtml(hint)}</span>`;

@@ -29,6 +29,7 @@
     </a>
     <nav class="header-actions" aria-label="Navigasi utama">
       <a class="header-link" href="#menu">Menu</a>
+      <a class="header-link" href="#cara-pesan">Cara pesan</a>
       <button class="cart-trigger" id="open-cart" type="button" aria-label="Buka keranjang, 0 item">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6M10 20h.01M18 20h.01"/></svg>
         <span>Keranjang</span><span class="cart-count" id="cart-count">0</span>
@@ -38,35 +39,32 @@
 
   <main>
     <section class="hero" id="beranda">
-      <div class="hero-pattern" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <img class="hero-logo" src="assets/img/logo.png" alt="Logo Dapur Pangeran" width="100" height="100">
-        <p class="eyebrow">Racikan hangat untuk momen istimewa</p>
-        <h1>Hidangan yang membuat setiap momen terasa dekat.</h1>
-        <p class="hero-intro">Catering nasi box, snack box, dan tumpeng untuk setiap momen bersama.</p>
-        <div class="hero-actions">
-          <a class="button button-gold" href="#menu">Lihat Menu <span aria-hidden="true">↘</span></a>
-          <button class="button button-outline" type="button" data-whatsapp-chat><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 32 32"><path d="M16 3.5A12.3 12.3 0 0 0 5.4 22l-1.6 6 6.2-1.6A12.3 12.3 0 1 0 16 3.5Z"/><path d="M11.1 9.7c.3-.6.6-.6 1-.6h.6c.3 0 .4.1.6.5l.9 2.1c.1.3.1.5-.1.7l-.7.9c-.2.2-.2.4 0 .7a10 10 0 0 0 3.8 3.5c.3.2.5.2.7-.1l.9-1.1c.2-.3.5-.3.8-.2l2 .9c.3.2.5.3.5.6 0 .4-.3 1.3-.8 1.8s-1.2.8-1.9.8-1.5-.2-2.7-.7a14.8 14.8 0 0 1-4.8-3.7 11.2 11.2 0 0 1-1.9-3.8c-.2-1 .1-1.8.5-2.3Z"/></svg><span>Chat WhatsApp</span><span aria-hidden="true">↗</span></button>
+      <h1>Nasi box, snack box &amp; tumpeng.</h1>
+      <div class="hero-body">
+        <div class="hero-copy">
+          <p class="hero-intro">Catering Dapur Pangeran untuk kantor, arisan, dan acara keluarga di Jakarta dan sekitarnya. Pilih menu, kirim pesanan lewat WhatsApp, kami siapkan tepat waktu.</p>
+          <div class="hero-actions">
+            <a class="button button-gold" href="#menu">Lihat menu</a>
+            <button class="button button-outline" type="button" data-whatsapp-chat><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 32 32"><path d="M16 3.5A12.3 12.3 0 0 0 5.4 22l-1.6 6 6.2-1.6A12.3 12.3 0 1 0 16 3.5Z"/><path d="M11.1 9.7c.3-.6.6-.6 1-.6h.6c.3 0 .4.1.6.5l.9 2.1c.1.3.1.5-.1.7l-.7.9c-.2.2-.2.4 0 .7a10 10 0 0 0 3.8 3.5c.3.2.5.2.7-.1l.9-1.1c.2-.3.5-.3.8-.2l2 .9c.3.2.5.3.5.6 0 .4-.3 1.3-.8 1.8s-1.2.8-1.9.8-1.5-.2-2.7-.7a14.8 14.8 0 0 1-4.8-3.7 11.2 11.2 0 0 1-1.9-3.8c-.2-1 .1-1.8.5-2.3Z"/></svg><span>Chat WhatsApp</span></button>
+          </div>
         </div>
-        <div class="hero-note"><span class="note-rule"></span> Disiapkan untuk kantor, arisan, dan acara keluarga.</div>
-      </div>
-      <div class="hero-art" aria-label="Ilustrasi hidangan nasi dan lauk">
-        <img src="assets/img/hidangan.svg" alt="Ilustrasi nasi box dengan lauk dan sayuran" fetchpriority="high">
-        <div class="hero-seal"><span>RASA</span><strong>Rumah</strong><span>SEJAK HATI</span></div>
+        <div class="hero-art">
+          <img src="assets/img/hidangan.svg" alt="Ilustrasi nasi box dengan lauk dan sayuran" fetchpriority="high">
+        </div>
       </div>
     </section>
 
-    <section class="order-info" aria-label="Informasi pemesanan">
-      <div class="info-lead"><span class="info-icon" aria-hidden="true">✳</span><div><strong>Pesanan acara, lebih mudah.</strong><span>Rencanakan dari sekarang agar semua tersaji tepat waktu.</span></div></div>
+    <section class="order-info" aria-labelledby="info-title">
+      <div class="info-lead"><h2 id="info-title">Pesanan acara, lebih mudah.</h2><p>Rencanakan dari sekarang agar semua tersaji tepat waktu.</p></div>
       <div class="info-detail"><strong>Min. 20 box</strong><span>untuk nasi box</span></div>
       <div class="info-detail"><strong>Gratis ongkir</strong><span>10 km, min. 50 box</span></div>
       <div class="info-detail"><strong>Gratis ongkir</strong><span>20 km, min. 100 box</span></div>
-      <div class="info-detail info-last"><strong>Pesan H-3</strong><span>untuk menu bertanda</span></div>
+      <div class="info-detail"><strong>Pesan H-3</strong><span>untuk menu bertanda</span></div>
     </section>
 
     <section class="menu-section" id="menu">
       <div class="section-heading">
-        <div><p class="eyebrow eyebrow-dark">Dari dapur kami</p><h2>Menu untuk dibagikan</h2></div>
+        <h2>Menu untuk dibagikan</h2>
         <p class="section-description">Pilih hidangan untuk acara Anda. Semua harga dalam rupiah dan belum termasuk ongkir.</p>
       </div>
       <div class="menu-tools">
@@ -78,22 +76,23 @@
     </section>
 
     <section class="how-order" id="cara-pesan">
-      <div class="how-heading"><p class="eyebrow">Pesan tanpa berbelit</p><h2>Tiga langkah, lalu kami siapkan.</h2></div>
+      <h2>Tiga langkah, lalu kami siapkan.</h2>
       <ol class="steps">
-        <li><span class="step-number">01</span><div><h3>Pilih menu</h3><p>Tambahkan menu dan sesuaikan jumlah serta pilihannya.</p></div></li>
-        <li><span class="step-number">02</span><div><h3>Isi data acara</h3><p>Berikan detail pengiriman agar pesanan kami catat dengan tepat.</p></div></li>
-        <li><span class="step-number">03</span><div><h3>Kirim via WhatsApp</h3><p>Periksa rangkuman pesanan, lalu lanjutkan percakapan.</p></div></li>
+        <li><h3>Pilih menu</h3><p>Tambahkan menu dan sesuaikan jumlah serta pilihannya.</p></li>
+        <li><h3>Isi data acara</h3><p>Berikan detail pengiriman agar pesanan kami catat dengan tepat.</p></li>
+        <li><h3>Kirim via WhatsApp</h3><p>Periksa rangkuman pesanan, lalu lanjutkan percakapan.</p></li>
       </ol>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main">
-      <div class="footer-brand"><span class="footer-mark"><img src="assets/img/logo.png" alt="" onerror="this.hidden=true"></span><div><strong>Dapur Pangeran</strong><span>Hidangan untuk momen istimewa.</span></div></div>
-      <div class="footer-column"><h2>Hubungi</h2><button type="button" class="footer-link" data-whatsapp-chat><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 32 32"><path d="M16 3.5A12.3 12.3 0 0 0 5.4 22l-1.6 6 6.2-1.6A12.3 12.3 0 1 0 16 3.5Z"/><path d="M11.1 9.7c.3-.6.6-.6 1-.6h.6c.3 0 .4.1.6.5l.9 2.1c.1.3.1.5-.1.7l-.7.9c-.2.2-.2.4 0 .7a10 10 0 0 0 3.8 3.5c.3.2.5.2.7-.1l.9-1.1c.2-.3.5-.3.8-.2l2 .9c.3.2.5.3.5.6 0 .4-.3 1.3-.8 1.8s-1.2.8-1.9.8-1.5-.2-2.7-.7a14.8 14.8 0 0 1-4.8-3.7 11.2 11.2 0 0 1-1.9-3.8c-.2-1 .1-1.8.5-2.3Z"/></svg> WhatsApp <span aria-hidden="true">↗</span></button><a class="footer-link" href="https://instagram.com/dapurpangeran" target="_blank" rel="noreferrer">Instagram @dapurpangeran <span aria-hidden="true">↗</span></a></div>
-      <div class="footer-column"><h2>Area layanan</h2><p>Jakarta dan sekitarnya<br>Konfirmasi jangkauan melalui WhatsApp.</p></div>
+      <div class="footer-brand"><span class="footer-mark"><img src="assets/img/logo.png" alt="" onerror="this.hidden=true"></span><p>Hidangan untuk momen istimewa.</p></div>
+      <div class="footer-column"><h2>Hubungi</h2><button type="button" class="footer-link" data-whatsapp-chat><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 32 32"><path d="M16 3.5A12.3 12.3 0 0 0 5.4 22l-1.6 6 6.2-1.6A12.3 12.3 0 1 0 16 3.5Z"/><path d="M11.1 9.7c.3-.6.6-.6 1-.6h.6c.3 0 .4.1.6.5l.9 2.1c.1.3.1.5-.1.7l-.7.9c-.2.2-.2.4 0 .7a10 10 0 0 0 3.8 3.5c.3.2.5.2.7-.1l.9-1.1c.2-.3.5-.3.8-.2l2 .9c.3.2.5.3.5.6 0 .4-.3 1.3-.8 1.8s-1.2.8-1.9.8-1.5-.2-2.7-.7a14.8 14.8 0 0 1-4.8-3.7 11.2 11.2 0 0 1-1.9-3.8c-.2-1 .1-1.8.5-2.3Z"/></svg> WhatsApp</button><a class="footer-link" href="https://instagram.com/dapurpangeran" target="_blank" rel="noreferrer">Instagram @dapurpangeran</a></div>
+      <div class="footer-column"><h2>Area layanan</h2><p>Jakarta dan sekitarnya.<br>Konfirmasi jangkauan melalui WhatsApp.</p></div>
     </div>
-    <div class="footer-bottom"><span>Demo desain oleh <strong>[NAMA SAYA]</strong>. Logo, nama, dan menu milik Dapur Pangeran.</span><span>© <span id="year"></span> Dapur Pangeran</span></div>
+    <p class="footer-wordmark" aria-hidden="true">Dapur Pangeran</p>
+    <div class="footer-bottom"><span>Demo desain oleh <strong>Arya Pradia</strong>. Logo, nama, dan menu milik Dapur Pangeran.</span><span>© <span id="year"></span> Dapur Pangeran</span></div>
   </footer>
 
   <button class="floating-whatsapp" type="button" data-whatsapp-chat aria-label="Chat Dapur Pangeran melalui WhatsApp">
@@ -103,7 +102,7 @@
 
   <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
   <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" aria-hidden="true" inert>
-    <div class="drawer-header"><div><p class="eyebrow eyebrow-dark">Rangkuman pesanan</p><h2 id="cart-title">Keranjang <span id="drawer-count">(0)</span></h2></div><button class="icon-button" type="button" id="close-cart" aria-label="Tutup keranjang">×</button></div>
+    <div class="drawer-header"><h2 id="cart-title">Keranjang <span id="drawer-count">(0)</span></h2><button class="icon-button" type="button" id="close-cart" aria-label="Tutup keranjang">×</button></div>
     <div class="drawer-content">
       <div id="cart-lines" class="cart-lines"></div>
       <form id="order-form" class="order-form">
