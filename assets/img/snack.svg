@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" role="img" aria-labelledby="title desc">
+  <title id="title">Aneka snack dan kue</title><desc id="desc">Ilustrasi jajanan pasar dan kudapan manis.</desc>
+  <defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#f5dd9e" opacity=".3"/></pattern></defs><rect x="35" y="24" width="670" height="500" rx="230" fill="#7a2322"/><rect x="35" y="24" width="670" height="500" rx="230" fill="url(#dots)"/>
+  <ellipse cx="370" cy="373" rx="214" ry="75" fill="#f4e5c4"/><ellipse cx="370" cy="360" rx="196" ry="61" fill="#fff8e9"/>
+  <path d="m210 319 72-98 63 97-73 39Z" fill="#dc8150"/><path d="m234 312 46-61 40 61-47 25Z" fill="#f1cb71"/><path d="M353 278q0-54 48-54t48 54v64h-96Z" fill="#b96a4f"/><path d="M365 280q0-37 36-37t36 37v45h-72Z" fill="#efb86d"/><path d="M464 280q37-35 67 1l-12 65q-48 8-63-26Z" fill="#8b5140"/><path d="M477 291q24-24 42 1l-9 37q-29 3-38-15Z" fill="#edc57b"/>
+  <path d="M299 230c20-17 43-14 53 6 9 19-4 39-24 43-21 5-44-8-43-27 0-9 5-17 14-22Zm146-3c17-18 40-18 52 0 11 17 1 39-18 46-20 8-44-3-45-22-.5-9 3-17 11-24Z" fill="#ce5340"/><circle cx="323" cy="244" r="5" fill="#ffe7a3"/><circle cx="466" cy="239" r="5" fill="#ffe7a3"/>
+  <path d="M248 345q-28-25-47 4 25 22 47-4Zm257 4q29-27 50 3-28 23-50-3Z" fill="#73904a"/><path d="M367 178c-20-26-15-54 8-70 16 23 17 46-8 70Zm49-5c23-24 21-51 0-70-17 22-21 45 0 70Z" fill="#779348"/>
+</svg>

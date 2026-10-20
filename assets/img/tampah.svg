@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" role="img" aria-labelledby="title desc">
+  <title id="title">Aneka jajanan tampah</title><desc id="desc">Ilustrasi tampah bambu berisi aneka jajanan tradisional.</desc>
+  <defs><pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M0 0 22 22m-22 0L22 0" stroke="#d5a63a" stroke-width="1" opacity=".15"/></pattern></defs><rect x="35" y="24" width="670" height="500" rx="230" fill="#7a2322"/><rect x="35" y="24" width="670" height="500" rx="230" fill="url(#grid)"/>
+  <circle cx="370" cy="278" r="195" fill="#a86c30"/><circle cx="370" cy="278" r="177" fill="#d5a64d"/><circle cx="370" cy="278" r="155" fill="#f3dc9c"/><circle cx="370" cy="278" r="135" fill="none" stroke="#ad762d" stroke-width="5" stroke-dasharray="6 6"/>
+  <path d="M250 235q30-55 62-8l-23 67q-45-6-39-59Z" fill="#cf6848"/><path d="M323 200q47-21 62 24l-20 51q-48 2-42-44Z" fill="#edc36b"/><path d="M410 220q38-42 68-4l-3 61q-43 18-62-21Z" fill="#86543c"/><path d="M270 305q37-35 64 7l-15 45q-48 12-49-22Z" fill="#8c5a35"/><path d="M349 294q45-25 68 17l-24 45q-44 1-44-37Z" fill="#d76f50"/><path d="M445 307q37-34 65 6l-14 43q-47 15-50-21Z" fill="#8eaa62"/><path d="M361 143q36-30 63 5l-9 49q-46 12-54-19Z" fill="#b2b861"/>
+  <g fill="#f6e5b3"><circle cx="276" cy="243" r="5"/><circle cx="294" cy="233" r="4"/><circle cx="345" cy="218" r="4"/><circle cx="432" cy="239" r="5"/><circle cx="298" cy="321" r="4"/><circle cx="381" cy="309" r="4"/><circle cx="475" cy="326" r="5"/></g>
+  <path d="M202 258c-25-31-22-67 4-88 18 29 20 56-4 88Zm334-5c24-32 20-68-6-88-17 30-18 57 6 88Z" fill="#6a8744"/>
+</svg>
